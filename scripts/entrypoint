@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "$(date -I'seconds') INFO Initial load from Traefik API"
+su -s /bin/bash -c "/opt/check/exec.sh" nobody
+
+cron="${custom_cron:-"*/5 * * * *"}"
+echo "${cron} nobody  /opt/check/scripts/exec.sh" >> /etc/crontabs/root 
+
+exec $@
