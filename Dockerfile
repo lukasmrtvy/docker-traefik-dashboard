@@ -9,7 +9,7 @@ RUN apk update && apk add --no-cache jq curl darkhttpd bash supervisor
 
 RUN mkdir -p /opt/check  && \
     chmod +x /opt/check/scripts/exec.sh /entrypoint && \
-    chown ${user}: -R /opt/check
+    chown nobody: -R /opt/check
 
 WORKDIR  /opt/check
 
