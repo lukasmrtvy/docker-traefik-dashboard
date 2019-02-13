@@ -1,6 +1,6 @@
 FROM alpine:3.9
 
-COPY static/index.html /opt/check/
+COPY static/ /opt/check/
 COPY scripts/exec.sh /opt/check/scripts/
 COPY scripts/entrypoint /
 COPY conf/supervisor.conf /
