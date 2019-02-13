@@ -5,7 +5,7 @@ COPY scripts/exec.sh /opt/check/
 COPY scripts/entrypoint.sh /
 COPY conf/supervisord.conf /
 
-RUN apk update && apk add --no-cache jq curl darkhttpd  supervisor
+RUN apk update && apk add --no-cache jq curl darkhttpd bash supervisor
 
 RUN mkdir -p /opt/check  && \
     chmod +x /opt/check/scripts/exec.sh /entrypoint.sh && \
