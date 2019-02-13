@@ -6,17 +6,15 @@ echo "$(date -I'seconds') INFO Loading data Traefik API"
 
 URL="${URL:-http://traefik:8080}"
 
-if [ $CUSTOM_CA ];
+if [ "$CUSTOM_CA" ];
 then
   options+=(--cacert $cacert_path)
-fi
-
-if [ $SKIP_SSL_VERIFICATION ];
+elif [ "$SKIP_SSL_VERIFICATION" ];
 then
-  options+=(-k)
+   options+=(-k)
 fi
 
-if [ $AUTH_USER ] && [ $AUTH_PASSWORD ];
+if [ "$AUTH_USER" ] && [ "$AUTH_PASSWORD" ];
 then
   options+=(-u $AUTH_USER:$AUTH_PASSWORD)
 fi
