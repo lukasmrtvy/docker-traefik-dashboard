@@ -2,8 +2,8 @@ FROM alpine:3.9
 
 COPY static/index.html /opt/check/
 COPY scripts/exec.sh /opt/check/
-COPY scripts/entrypoint.sh /
-COPY conf/supervisord.conf /
+COPY scripts/entrypoint /
+COPY conf/supervisor.conf /
 
 RUN apk update && apk add --no-cache jq curl darkhttpd bash supervisor
 
@@ -17,4 +17,4 @@ EXPOSE 9001
 
 ENTRYPOINT ["/entrypoint"]
 
-CMD ["supervisord","-c","/supervisord.conf"]
+CMD ["supervisord","-c","/supervisor.conf"]
