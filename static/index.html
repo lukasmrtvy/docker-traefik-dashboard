@@ -10,6 +10,15 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+ <script>
+    $(document).ready(function() {
+        myTable = $('#ajax-table').DataTable({
+            "ajax": "results.json",
+            "paging": false,
+            "searching": false
+        });
+    });
+</script>
 <div id='stars'></div>
 <div id='stars2'></div>
 <div id='stars3'></div>
