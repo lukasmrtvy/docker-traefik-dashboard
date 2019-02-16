@@ -25,7 +25,14 @@
             columnDefs: [
             {
                 targets: -1,
-                className: 'dt-body-right'
+                className: 'dt-body-right',
+                "render": function(data, type, row, meta){
+                  if(type === 'display'){
+                    data = '<a href="' + data + '">' + data + '</a>';
+                  }
+
+                return data;
+                }
             }
           ]
         });
