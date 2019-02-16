@@ -21,7 +21,13 @@
             "ajax": "results.json",
             "paging": false,
             "searching": false,
-            "bInfo" : false
+            "bInfo" : false,
+            columnDefs: [
+            {
+                targets: -1,
+                className: 'dt-body-right'
+            }
+          ]
         });
     });
 </script>
@@ -35,9 +41,9 @@
   <br>
   <span>
   </span>
-<table id="ajax-table">
+<table id="ajax-table" class="compact" style="width:80%">
   <thead>
-    <th>Name</th>
+    <th>Available applications</th>
   </thead>
   <tbody>
   </tbody>
